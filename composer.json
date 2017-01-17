@@ -31,8 +31,7 @@
     "extra":{
         "contao":{
             "sources":{
-                "TL_ROOT/system/config":"system/config",
-				"TL_ROOT/assets":"assets"
+                "":""
             }
         }
     }
