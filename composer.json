@@ -33,7 +33,7 @@
             "sources":{
                 "TL_ROOT/assets/tinymce4/plugins":"assets/tinymce4/plugins",
 				"TL_ROOT/system/config/tinyCustom.tinyCustom.php":"system/config/tinyCustom.tinyCustom.php",
-				"TL_ROOT/system/config/tinyCustom.tinyCustom.php":"system/config/dcaconfig.dcaconfig.php"
+				"TL_ROOT/system/config/dcaconfig.dcaconfig.php":"system/config/dcaconfig.dcaconfig.php"
             }
         }
     }
