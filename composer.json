@@ -1,8 +1,8 @@
 {
     "name":"markocupic/tinymce_newslink",
     "description":"Add a newslink in tinyMCE rte.",
-    "keywords":["contao", "newslink", "tinyMCE"],
-    "type":"contao-module",
+    "keywords":["contao", "plugin", "newslink", "tinyMCE"],
+    "type":"contao-plugin",
     "license":"LGPL-3.0+",
     "authors":[
         {
