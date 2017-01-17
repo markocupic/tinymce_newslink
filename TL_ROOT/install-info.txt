@@ -1,0 +1,3 @@
+"tinyMCE Newslink" a  Contao Plugin for the tinyMCE rich text editor
+!Important! Please read the README.md before you install this extension.
+https://github.com/markocupic/tinymce_newslink
