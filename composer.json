@@ -31,7 +31,7 @@
     "extra":{
         "contao":{
             "sources":{
-                "TL_ROOT/assets/tinymce4/plugins":"assets/tinymce4/plugins",
+                "TL_ROOT/assets/tinymce4/plugins/contaonewslink/plugin.min.js":"assets/tinymce4/plugins/contaonewslink/plugin.min.js",
 				"TL_ROOT/system/config/tinymcenewslink.tinyCustom.php":"system/config/tinymcenewslink.tinyCustom.php",
 				"TL_ROOT/system/config/tinymcenewslink.dcaconfig.php":"system/config/tinymcenewslink.dcaconfig.php"
             }
