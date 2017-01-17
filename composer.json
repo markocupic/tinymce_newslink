@@ -31,7 +31,8 @@
     "extra":{
         "contao":{
             "sources":{
-                "":""
+                "TL_ROOT/assets/tinymce4/plugins":"assets/tinymce4/plugins",
+				"TL_ROOT/system/config":"system/config"
             }
         }
     }
