@@ -5,8 +5,8 @@ Mit dem Plugin lassen sich im Backend beim Gebrauch des tinyMCE rte über einen B
 
 ## Installation
 Nach der Installation müssen die beiden Dateien
-system/config/dcaconfig.dcaconfig.php in system/config/dcaconfig.php  und 
-system/config/tinyCustom.tinyCustom.php in system/config/tinyCustom.php
+system/config/tinymcenewslink.dcaconfig.php in system/config/dcaconfig.php  und 
+system/config/tinymcenewslink.tinyCustom.php in system/config/tinyCustom.php
 umbenannt werden, oder die bereits bestehenden Dateien entsprechend angepasst werden.
 
 In system/config/tinyCustom.php die gelb markierten 4 Änderungen.
