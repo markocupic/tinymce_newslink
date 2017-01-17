@@ -1,0 +1,39 @@
+{
+    "name":"markocupic/tinymce_newslink",
+    "description":"Add a newslink in tinyMCE rte.",
+    "keywords":["contao", "newslink", "tinyMCE"],
+    "type":"contao-plugin",
+    "license":"LGPL-3.0+",
+    "authors":[
+        {
+            "name":"Marko Cupic",
+            "email":"m.cupic@gmx.ch",
+            "homepage":"http://4ae-racing-team.ch",
+            "role":"Developer"
+        }
+    ],
+    "support":{
+        "issues":"https://github.com/markocupic/tinymce_newslink/issues",
+        "source":"https://github.com/markocupic/tinymce_newslink"
+    },
+    "require":{
+        "php":">=5.4",
+        "contao/core":">=3.5,<4",
+        "contao-community-alliance/composer-plugin": "*",
+    },
+    
+    "conflict": {
+        "contao/core": "3.0.*"
+    },
+    "autoload":{
+        "classmap":[""]
+    },
+    "extra":{
+        "contao":{
+            "sources":{
+                "TL_ROOT/system/config":"system/config",
+				"TL_ROOT/assets":"assets"
+            }
+        }
+    }
+}
