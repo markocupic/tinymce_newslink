@@ -22,36 +22,29 @@ if ($GLOBALS['TL_CONFIG']['useRTE']):
      */
     function tinymceGetContaoNewsArchives(){
         $arrNews = array();
+        $arrArchives = array();
         $oArchive = \NewsArchiveModel::findAll();
         if ($oArchive !== null)
         {
-            $m = 0;
             while ($oArchive->next())
             {
+
                 $oNews = \NewsModel::findByPid($oArchive->id);
-                $i = 0;
                 while ($oNews->next())
                 {
                     if ($oNews->published)
                     {
-                        if ($i == 0 && $m > 0)
-                        {
-                            $arrNews[] = array('value' => 0, 'text' => '-----------------------------------------------------------');
-                            $arrNews[] = array('value' => 0, 'text' => '');
-                        }
-                        if ($i == 0)
-                        {
-                            $arrNews[] = array('value' => 0, 'text' => 'Archiv: ' . htmlspecialchars(utf8_decode_entities(strtoupper($oArchive->title))));
-                        }
-                        $arrNews[] = array('value' => $oNews->id, 'text' => htmlspecialchars(utf8_decode_entities($oNews->headline)));
-                        $i++;
+                        $arrNews['archive_' . $oArchive->id][] = array('value' => $oNews->id, 'text' => htmlspecialchars(utf8_decode_entities($oNews->headline)));
                     }
-
                 }
-                $m++;
+                // Do not list archive, if there is no item
+                if(isset($arrNews['archive_' . $oArchive->id]))
+                {
+                    $arrArchives[] = array('value' => $oArchive->id, 'text' => htmlspecialchars(utf8_decode_entities(strtoupper($oArchive->title))));
+                }
             }
         }
-        return json_encode($arrNews);
+        return json_encode(array('archives' => $arrArchives, 'news' => $arrNews));
     }
 
 ?>
@@ -59,7 +52,7 @@ if ($GLOBALS['TL_CONFIG']['useRTE']):
     <script>
         window.tinymce && tinymce.init({
             // Add newsarchives to the tinyMCE configuration
-            newsarchives: <?= tinymceGetContaoNewsArchives(); ?>,
+            news_data: <?= tinymceGetContaoNewsArchives(); ?>,
             skin: 'contao',
             selector: '#<?php echo $selector; ?>',
             language: '<?php echo Backend::getTinyMceLanguage(); ?>',
