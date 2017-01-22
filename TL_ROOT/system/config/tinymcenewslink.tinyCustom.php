@@ -15,44 +15,13 @@
  */
 if ($GLOBALS['TL_CONFIG']['useRTE']):
 
-    /**
-     * Get all News items as json_encoded array
-     * @author Marko Cupic
-     * @return string
-     */
-    function tinymceGetContaoNewsArchives(){
-        $arrNews = array();
-        $arrArchives = array();
-        $oArchive = \NewsArchiveModel::findAll();
-        if ($oArchive !== null)
-        {
-            while ($oArchive->next())
-            {
-
-                $oNews = \NewsModel::findByPid($oArchive->id);
-                while ($oNews->next())
-                {
-                    if ($oNews->published)
-                    {
-                        $arrNews['archive_' . $oArchive->id][] = array('value' => $oNews->id, 'text' => htmlspecialchars(utf8_decode_entities($oNews->headline)));
-                    }
-                }
-                // Do not list archive, if there is no item
-                if(isset($arrNews['archive_' . $oArchive->id]))
-                {
-                    $arrArchives[] = array('value' => $oArchive->id, 'text' => htmlspecialchars(utf8_decode_entities(strtoupper($oArchive->title))));
-                }
-            }
-        }
-        return json_encode(array('archives' => $arrArchives, 'news' => $arrNews));
-    }
-
 ?>
     <script>window.tinymce || document.write('<script src="<?php echo TL_ASSETS_URL; ?>assets/tinymce4/tinymce.gzip.js">\x3C/script>')</script>
     <script>
         window.tinymce && tinymce.init({
-            // Add newsarchives to the tinyMCE configuration
-            news_data: <?= tinymceGetContaoNewsArchives(); ?>,
+            // contaonewslink configuration
+            contaonewslink_news_data: <?= json_encode(TinyMceContaoNewslink\ContaoNewslink::getContaoNewsArchivesAsJSON()) ?>,
+            contaonewslink_language_data: <?= json_encode($GLOBALS['TL_LANG']['TINYMCE']['CONTAONEWSLINK']) ?>,
             skin: 'contao',
             selector: '#<?php echo $selector; ?>',
             language: '<?php echo Backend::getTinyMceLanguage(); ?>',

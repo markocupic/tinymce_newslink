@@ -1,6 +1,6 @@
 {
     "name":"markocupic/tinymce_newslink",
-    "description":"Add a newslink in tinyMCE rte.",
+    "description":"Add a newslink to tinyMCE rte.",
     "keywords":["contao", "plugin", "newslink", "tinyMCE"],
     "type":"contao-module",
     "license":"LGPL-3.0+",
@@ -33,7 +33,9 @@
             "sources":{
                 "TL_ROOT/assets/tinymce4/plugins/contaonewslink/plugin.min.js":"assets/tinymce4/plugins/contaonewslink/plugin.min.js",
 				"TL_ROOT/system/config/tinymcenewslink.tinyCustom.php":"system/config/tinymcenewslink.tinyCustom.php",
-				"TL_ROOT/system/config/tinymcenewslink.dcaconfig.php":"system/config/tinymcenewslink.dcaconfig.php"
+				"TL_ROOT/system/config/tinymcenewslink.dcaconfig.php":"system/config/tinymcenewslink.dcaconfig.php",
+				"TL_ROOT/system/modules/tinymce_contaonewslink":"system/modules/tinymce_contaonewslink"
+
             }
         }
     }
