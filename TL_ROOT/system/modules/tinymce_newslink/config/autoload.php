@@ -14,7 +14,7 @@
  */
 ClassLoader::addNamespaces(array
 (
-	'TinyMceContaoNewslink',
+	'TinymceNewslink',
 ));
 
 
@@ -24,5 +24,5 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
 	// Classes
-	'TinyMceContaoNewslink\ContaoNewslink' => 'system/modules/tinymce_contaonewslink/classes/ContaoNewslink.php',
+	'TinymceNewslink\TinymceNewslink' => 'system/modules/tinymce_newslink/classes/TinymceNewslink.php',
 ));

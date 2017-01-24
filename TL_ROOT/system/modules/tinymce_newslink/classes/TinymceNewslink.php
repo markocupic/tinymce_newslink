@@ -6,10 +6,10 @@
  * Time: 21:36
  */
 
-namespace TinyMceContaoNewslink;
+namespace TinymceNewslink;
 
 
-class ContaoNewslink
+class TinymceNewslink
 {
     /**
      * Get all News items as json_encoded array
