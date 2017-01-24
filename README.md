@@ -6,5 +6,5 @@ Mit diesem Plugin lassen sich im Backend beim Gebrauch des tinyMCE rte über eine
 Damit das Plugin funktioniert, muss https://github.com/markocupic/tinymce_plugin_builder installiert sein.
 
 
-![Backend](manual/image3.JPG?raw=true "Backend")
+![Backend](manual/image1.JPG?raw=true "Backend")
 
