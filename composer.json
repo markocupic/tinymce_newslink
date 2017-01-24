@@ -20,7 +20,7 @@
         "php":">=5.4",
         "contao/core":">=3.5,<4",
         "contao-community-alliance/composer-plugin": "*",
-	"markocupic/tinymce_plugin_builder": "*"
+	"markocupic/tinymce_plugin_builder": ">=1.0"
     },
     
     "conflict": {
