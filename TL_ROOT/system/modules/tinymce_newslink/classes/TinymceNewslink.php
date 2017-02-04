@@ -20,27 +20,24 @@ class TinymceNewslink
     {
         $arrNews = array();
         $arrArchives = array();
-        $oArchive = \NewsArchiveModel::findAll();
-        if ($oArchive !== null)
+        $oArchive = \Database::getInstance()->execute("SELECT * FROM tl_news_archive");
+        while ($oArchive->next())
         {
-            while ($oArchive->next())
+            $oNews = \Database::getInstance()->prepare("SELECT * FROM tl_news WHERE pid=?")->execute($oArchive->id);
+            while ($oNews->next())
             {
-
-                $oNews = \NewsModel::findByPid($oArchive->id);
-                while ($oNews->next())
+                if ($oNews->published)
                 {
-                    if ($oNews->published)
-                    {
-                        $arrNews['archive_' . $oArchive->id][] = array('value' => $oNews->id, 'text' => htmlspecialchars(utf8_decode_entities($oNews->headline)));
-                    }
-                }
-                // Do not list archive, if there is no item
-                if (isset($arrNews['archive_' . $oArchive->id]))
-                {
-                    $arrArchives[] = array('value' => $oArchive->id, 'text' => htmlspecialchars(utf8_decode_entities(strtoupper($oArchive->title))));
+                    $arrNews['archive_' . $oArchive->id][] = array('value' => $oNews->id, 'text' => htmlspecialchars(utf8_decode_entities($oNews->headline)));
                 }
             }
+            // Do not list archive, if there is no item
+            if (isset($arrNews['archive_' . $oArchive->id]))
+            {
+                $arrArchives[] = array('value' => $oArchive->id, 'text' => htmlspecialchars(utf8_decode_entities(strtoupper($oArchive->title))));
+            }
         }
+
         return array('archives' => $arrArchives, 'news' => $arrNews);
     }
 
